@@ -4,9 +4,6 @@ const ProductCard = () => {
   return (
     <div className="card">
       <div className="card-content">
-        <picture>
-          <img src={require("./candy.jpg")} alt="Products" />
-        </picture>
         <h3>
           Name: <span className="card-productname">Jolly Developer</span>
         </h3>
