@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './KandyKorner';
+import App from './components/KandyKorner';
 
 ReactDOM.render(
   <React.StrictMode>
