@@ -18,7 +18,7 @@ const EmployeeList = () => {
   return (
     <div className="container-cards">
       {employees.map((employee) => (
-        <EmployeeCard />
+        <EmployeeCard key={employees.id} employee={employee} />
       ))}
     </div>
   );

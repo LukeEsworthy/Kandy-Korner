@@ -1,13 +1,14 @@
 import React from "react";
+import "./Product.css";
 
-const ProductCard = () => {
+const ProductCard = (props) => {
   return (
     <div className="card">
       <div className="card-content">
         <h3>
-          Name: <span className="card-productname">Jolly Developer</span>
+          Name: <span className="card-productname">{props.product.name}</span>
         </h3>
-        <p>Price: $65,000.00</p>
+        <p>Price: ${props.product.price}</p>
       </div>
     </div>
   );
