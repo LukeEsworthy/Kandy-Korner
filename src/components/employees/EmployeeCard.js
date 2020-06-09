@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const EmployeeCard = (props) => {
   return (
@@ -14,6 +15,9 @@ const EmployeeCard = (props) => {
         <p>Phone: {props.employee.phone}</p>
         <p>Location: </p>
       </div>
+      <Link to={`/employees/${props.employee.id}`}>
+        <button>Details</button>
+      </Link>
     </div>
   );
 };
