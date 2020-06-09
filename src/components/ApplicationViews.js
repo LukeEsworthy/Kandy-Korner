@@ -3,9 +3,11 @@ import React from "react";
 import Home from "./home/Home";
 import ProductList from "./products/ProductList";
 import ProductDetail from "./products/ProductDetail";
+import ProductForm from "./products/ProductForm";
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import EmployeeDetail from "./employees/EmployeeDetail";
+import EmployeeForm from "./employees/EmployeeForm";
 
 const ApplicationViews = () => {
   return (
@@ -21,7 +23,7 @@ const ApplicationViews = () => {
         exact
         path="/products"
         render={(props) => {
-          return <ProductList />;
+          return <ProductList {...props} />;
         }}
       />
       <Route
@@ -30,6 +32,12 @@ const ApplicationViews = () => {
           return (
             <ProductDetail productId={parseInt(props.match.params.productId)} />
           );
+        }}
+      />
+      <Route
+        path="/products/new"
+        render={(props) => {
+          return <ProductForm {...props} />;
         }}
       />
       <Route
@@ -42,7 +50,7 @@ const ApplicationViews = () => {
         exact
         path="/employees"
         render={(props) => {
-          return <EmployeeList />;
+          return <EmployeeList {...props} />;
         }}
       />
       <Route
@@ -53,6 +61,12 @@ const ApplicationViews = () => {
               employeeId={parseInt(props.match.params.employeeId)}
             />
           );
+        }}
+      />
+      <Route
+        path="/employees/new"
+        render={(props) => {
+          return <EmployeeForm {...props} />;
         }}
       />
     </React.Fragment>
