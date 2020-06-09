@@ -47,6 +47,11 @@
       "name": "Chocolate Tux",
       "price": "3.89",
       "productTypeId": 1
+    },
+    {
+      "name": "Snickering Chocolate Bars",
+      "price": "65.99",
+      "id": 9
     }
   ],
   "productTypes": [

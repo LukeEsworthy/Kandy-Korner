@@ -3,6 +3,7 @@ import React from "react";
 import Home from "./home/Home";
 import ProductList from "./products/ProductList";
 import ProductDetail from "./products/ProductDetail";
+import ProductForm from "./products/ProductForm";
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import EmployeeDetail from "./employees/EmployeeDetail";
@@ -21,7 +22,7 @@ const ApplicationViews = () => {
         exact
         path="/products"
         render={(props) => {
-          return <ProductList />;
+          return <ProductList {...props} />;
         }}
       />
       <Route
@@ -30,6 +31,12 @@ const ApplicationViews = () => {
           return (
             <ProductDetail productId={parseInt(props.match.params.productId)} />
           );
+        }}
+      />
+      <Route
+        path="/products/new"
+        render={(props) => {
+          return <ProductForm {...props} />;
         }}
       />
       <Route

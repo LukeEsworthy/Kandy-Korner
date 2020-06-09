@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "./ProductCard";
 import ProductManager from "../../modules/ProductManager";
 
-const ProductList = () => {
+const ProductList = (props) => {
   const [products, setProducts] = useState([]);
 
   const getProducts = () => {
@@ -16,11 +16,24 @@ const ProductList = () => {
   }, []);
 
   return (
-    <div className="container-cards">
-      {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </div>
+    <>
+      <section className="section-content">
+        <button
+          type="button"
+          className="btn"
+          onClick={() => {
+            props.history.push("/products/new");
+          }}
+        >
+          Add Product
+        </button>
+      </section>
+      <div className="container-cards">
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    </>
   );
 };
 export default ProductList;
