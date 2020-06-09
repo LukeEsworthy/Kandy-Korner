@@ -129,6 +129,13 @@
       "password": "bryFive",
       "isSupervisor": false,
       "locationId": 3
+    },
+    {
+      "firstName": "Luke",
+      "lastName": "Esworthy",
+      "address": "5006 Stuart Lane, Brentwood, TN",
+      "phone": "865-5555",
+      "id": 4
     }
   ],
   "productLocations": [
