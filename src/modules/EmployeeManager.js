@@ -18,4 +18,9 @@ export default {
       body: JSON.stringify(newEmployee),
     }).then((data) => data.json());
   },
+  getWithLocations(id) {
+    return fetch(
+      `${remoteURL}/employees/${id}?_expand=location`
+    ).then((result) => result.json());
+  },
 };

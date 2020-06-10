@@ -13,11 +13,15 @@ const EmployeeCard = (props) => {
         </h3>
         <p>Address: {props.employee.address}</p>
         <p>Phone: {props.employee.phone}</p>
-        <p>Location: </p>
       </div>
-      <Link to={`/employees/${props.employee.id}`}>
-        <button>Details</button>
-      </Link>
+      <button
+        type="button"
+        onClick={() => {
+          props.history.push(`/employees/${props.employee.id}/details`);
+        }}
+      >
+        Details
+      </button>
     </div>
   );
 };

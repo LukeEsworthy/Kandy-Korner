@@ -8,7 +8,7 @@ import ProductForm from "./products/ProductForm";
 import ProductEditForm from "./products/ProductEditForm";
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
-import EmployeeDetail from "./employees/EmployeeDetail";
+import EmployeeWithLocations from "./employees/EmployeeWithLocations";
 import EmployeeForm from "./employees/EmployeeForm";
 
 const ApplicationViews = () => {
@@ -95,14 +95,10 @@ const ApplicationViews = () => {
       />
       <Route
         exact
-        path="/employees/:employeeId(\d+)"
+        path="/employees/:employeeId(\d+)/details"
         render={(props) => {
           if (isAuthenticated()) {
-            return (
-              <EmployeeDetail
-                employeeId={parseInt(props.match.params.employeeId)}
-              />
-            );
+            return <EmployeeWithLocations {...props} />;
           } else {
             return <Redirect to="/login" />;
           }

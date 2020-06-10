@@ -30,7 +30,7 @@ const EmployeeList = (props) => {
       </section>
       <div className="container-cards">
         {employees.map((employee) => (
-          <EmployeeCard key={employees.id} employee={employee} />
+          <EmployeeCard key={employees.id} employee={employee} {...props} />
         ))}
       </div>
     </>
