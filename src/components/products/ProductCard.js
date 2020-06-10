@@ -11,6 +11,12 @@ const ProductCard = (props) => {
         </h3>
         <p>Price: ${props.product.price}</p>
       </div>
+      <button
+        type="button"
+        onClick={() => props.history.push(`/products/${props.product.id}/edit`)}
+      >
+        Edit
+      </button>
       <Link to={`/products/${props.product.id}`}>
         <button>Details</button>
       </Link>

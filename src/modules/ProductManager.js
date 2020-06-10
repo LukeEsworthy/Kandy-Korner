@@ -16,4 +16,13 @@ export default {
       body: JSON.stringify(newProduct),
     }).then((data) => data.json());
   },
+  update(editedProduct) {
+    return fetch(`${remoteURL}/products/${editedProduct.id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(editedProduct),
+    }).then((data) => data.json());
+  },
 };
