@@ -5,6 +5,7 @@ import Home from "./home/Home";
 import ProductList from "./products/ProductList";
 import ProductDetail from "./products/ProductDetail";
 import ProductForm from "./products/ProductForm";
+import ProductEditForm from "./products/ProductEditForm";
 import LocationList from "./locations/LocationList";
 import EmployeeList from "./employees/EmployeeList";
 import EmployeeDetail from "./employees/EmployeeDetail";
@@ -55,6 +56,16 @@ const ApplicationViews = () => {
         render={(props) => {
           if (isAuthenticated()) {
             return <ProductForm {...props} />;
+          } else {
+            return <Redirect to="/login" />;
+          }
+        }}
+      />
+      <Route
+        path="/products/:productId(\d+)/edit"
+        render={(props) => {
+          if (isAuthenticated()) {
+            return <ProductEditForm {...props} />;
           } else {
             return <Redirect to="/login" />;
           }
